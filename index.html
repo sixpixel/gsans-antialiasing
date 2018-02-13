@@ -13,7 +13,7 @@
                font-style: normal;
                font-size: 16px;
                letter-spacing: 0.5px;
-               line-height: 24px;
+               line-height: normal;
                font-weight: 400;
           }
 
@@ -26,7 +26,7 @@
                letter-spacing: .5;
                font-size: 16px;
                font-style: normal;
-               line-height: 24px;
+               line-height: normal;
           }
 
           .card {
@@ -349,12 +349,17 @@
                     document.getElementById("typeSet").classList.add("hiddenSelect");
                     document.getElementById("typesetButton").classList.remove("typesetOn");
                     document.getElementById("typesetButton").classList.add("typesetOff");
-
                     document.getElementById("typesetButton").style["background-color"] = "#E1E8ED";
                     document.getElementById("typesetButton").style["color"] = "#002B49";
                     document.getElementById("typesetButton").innerHTML = "Display only CX Typeset Options";
+
+                    lineheightNormal = document.querySelectorAll(".gsans-regular, .gsanstext-regular");
+                    for (var i = 0; i < lineheightNormal.length; i += 1) {
+                              lineheightNormal[i].style["line-height"] = "normal";
+
                }
           }
+     }
 
           function numberLining() {
                window.toggleItal = document.querySelectorAll(".gsans-regular, .gsanstext-regular");
